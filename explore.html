@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Browse universities, TVET colleges, funding and learnerships | YAZI</title>
+<meta name="description" content="Application links, prospectuses and closing dates for universities, TVET colleges, private institutions, funding, learnerships and internships in South Africa.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="YAZI">
+<meta property="og:title" content="Browse universities, TVET colleges, funding and learnerships | YAZI">
+<meta property="og:description" content="Application links, prospectuses and closing dates for universities, TVET colleges, private institutions, funding, learnerships and internships in South Africa.">
+<meta name="theme-color" content="#0b6b5c">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230b6b5c'/%3E%3Ccircle cx='72' cy='28' r='9' fill='%23f2b134'/%3E%3Ctext x='24' y='72' font-size='56' font-family='sans-serif' font-weight='800' fill='white'%3EY%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="css/style.css">
+<script>document.documentElement.className+=" js"</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to the list</a>
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="logo" href="index.html" aria-label="YAZI home">YAZI<i></i></a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+    <nav id="main-nav" aria-label="Main">
+      <a href="index.html#how">How it works</a>
+      <a href="index.html#finder">Find my options</a>
+      <a href="explore.html" aria-current="page">Browse all</a>
+      <a href="about.html">About</a>
+      <a href="about.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+<main class="section" id="main">
+  <div class="wrap">
+    <h1>Browse all options</h1>
+    <p class="lead2">Application links, prospectuses and closing dates in one place.</p>
+    <div class="notice" role="note" id="asof"></div>
+    <div class="tabs" id="tabs" role="group" aria-label="Type of option"></div>
+    <p class="muted" id="blurb"></p>
+    <div class="filters">
+      <label>Search by name<input type="search" id="search" placeholder="For example, UCT, Polokwane or FNB"></label>
+      <label>Province<select id="prov"></select></label>
+      <label>Status<select id="stat"><option value="all">All</option><option value="live">Open for applications</option><option value="closed">Closing date passed</option><option value="check">Not open yet, rolling or check dates</option></select></label>
+    </div>
+    <div class="shown-row"><p class="muted" id="shown" aria-live="polite"></p><button class="link" id="clear" type="button">Clear filters</button></div>
+    <div id="list"></div>
+  </div>
+</main>
+<footer class="site-footer">
+  <div class="wrap foot-grid">
+    <div class="foot-brand">
+      <a class="logo" href="index.html" aria-label="YAZI home">YAZI<i></i></a>
+      <p class="foot-tag">From Insight to Impact</p>
+      <p class="muted">Clear, reliable next steps after matric: study options, funding, learnerships and more.</p>
+    </div>
+    <nav class="foot-links" aria-label="Explore">
+      <h2>Explore</h2>
+      <a href="index.html#finder">Find my options</a>
+      <a href="explore.html#universities">Universities</a>
+      <a href="explore.html#tvet">TVET colleges</a>
+      <a href="explore.html#funding">Funding</a>
+      <a href="explore.html#learnerships">Learnerships</a>
+    </nav>
+    <nav class="foot-links" aria-label="About YAZI">
+      <h2>YAZI</h2>
+      <a href="about.html">About us</a>
+      <a href="about.html#founder-title">Our founder</a>
+      <a href="about.html#disclaimer">Disclaimer</a>
+      <a href="about.html#privacy">Privacy</a>
+    </nav>
+    <div class="foot-links">
+      <h2>Contact</h2>
+      <a data-email="Enquiry from the YAZI website" href="about.html#contact">Email us</a>
+      <a href="about.html#contact">Contact us</a>
+    </div>
+  </div>
+  <div class="wrap foot-bottom">
+    <p>YAZI gives general guidance only. Requirements and closing dates change, so always confirm with the official source before you apply.</p>
+    <p>&copy; <span id="year"></span> YAZI. All rights reserved.</p>
+  </div>
+</footer>
+<script src="data/content.js"></script>
+<script src="js/common.js"></script>
+<script src="js/explore.js"></script>
+</body>
+</html>
