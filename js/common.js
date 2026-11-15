@@ -1,7 +1,7 @@
 /* Shared helpers. Content is read in one place: loadContent(). Swap it for Supabase later. */
 "use strict";
 /* SAMPLE contact email. Replace with the real address before launch. Every page reads it from here. */
-const CONTACT_EMAIL="hello@yazi.example";
+const CONTACT_EMAIL="yaziinsight@gmail.com";    
 const PROVINCES=["Eastern Cape","Free State","Gauteng","KwaZulu-Natal","Limpopo","Mpumalanga","Northern Cape","North West","Western Cape"];
 async function loadContent(){
   if(window.YAZI_CONTENT)return window.YAZI_CONTENT;
