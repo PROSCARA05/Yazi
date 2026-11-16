@@ -10,6 +10,7 @@ Plain HTML, CSS and JavaScript. No build step, no server code.
     index.html               Home page, options finder and browse-by-category links
     explore.html             Browse all: universities, TVET colleges, private, funding, learnerships
     about.html               About, founder, contact, disclaimer and privacy
+    sitemap.xml              List of pages for Google Search Console
     syntaxconnect.html       SyntaxConnect "coming soon" page (linked from the footer credit)
     css/style.css            All styling (light and dark mode)
     js/common.js             Shared helpers, mobile menu and the contact email (CONTACT_EMAIL)
@@ -20,6 +21,12 @@ Plain HTML, CSS and JavaScript. No build step, no server code.
     tools/build-content.js   Rebuilds data/content.js after you edit data/content.json
     docs/UPDATING.md         How to keep the listings up to date (start here)
     docs/CONTENT-REVIEW.md   Data that still needs checking
+
+## Releasing an update
+
+Browsers keep copies of `css/style.css` and the `js/` files. Each page loads them with `?v=20261116` on the end.
+When you change any CSS or JS file, change that number in **index.html, explore.html and about.html** (for example to today's date),
+so every visitor's browser downloads the new files instead of using its old copy. Editing `data/content.json` does not need this.
 
 ## Run it locally
 

@@ -44,3 +44,21 @@ Loaded from Learnerships-Internships.docx (11 entries) into a new "Learnerships"
 
 ## Before launch
 - Contact email set to yaziinsight@gmail.com (CONTACT_EMAIL at the top of js/common.js).
+
+## Data update (16 November 2026)
+Checked:
+- Northlink TVET: 30 October 2026 closing date confirmed (CareersPortal and others). "Check dates" note removed.
+- Boston City Campus: its own application page shows "Semester A 2027" applications open, starting February 2027. Marked open, several intakes a year.
+- Buffalo City TVET: sources disagree (1–30 September vs 30 August–30 November 2026). Still marked "check dates"; the site tells learners to contact the college.
+- MANCOSA and Milpark: no official 2027 dates found. Still marked "check dates".
+
+Added (each found on the employer's own careers page or job listing, details cross-checked with at least two listing sites):
+- Universal Healthcare Learnership 2027 (Sunninghill, closes 1 Dec 2026). Applications go through the employer's PNet listing.
+- DHL YES4Youth Learnership x50 (Uitenhage). No closing date stated. REMOVE by hand once the DHL advert disappears.
+- Rand Mutual Assurance Learnership 2027 (Parktown, starts January 2027). No closing date stated. REMOVE by hand once the RMA advert disappears.
+- Msobo Coal Surface Rock Breaking Learnership (near Ermelo, closes 30 Nov 2026, by email). One listing site said the recruitment email still needs the employer's confirmation, so it is marked "check dates".
+- Moshal Scholarship Program 2027 (closes 31 Dec 2026), from the NSTF listing and Moshal's own application form.
+
+Not added (could not confirm): BASF SA Trust bursary (one site says its portal shows closed), STANLIB-ABSIP bursary (only one source), Arjo YES programme (location and form unclear).
+
+Learnerships without a closing date do not hide themselves. Check them weekly and delete them when the advert is gone.

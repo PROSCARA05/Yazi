@@ -1,5 +1,5 @@
 {
- "compiled": "2026-11-15",
+ "compiled": "2026-11-16",
  "staleDays": 120,
  "settings": {
   "hideClosedLearnershipsAfterDays": 14
@@ -428,14 +428,14 @@
    "type": "private",
    "name": "Boston City Campus & Business College",
    "province": "National",
-   "applyUrl": "https://www.boston.co.za/",
+   "applyUrl": "https://enquiries.boston.co.za/Apply",
    "prospectusUrl": "https://www.boston.co.za/courses/",
-   "datesText": "For 2027: open April to November 2026 (early 30 Apr, regular 31 Jul, late 30 Sep). Several intakes a year",
+   "datesText": "Semester A 2027 applications are open now (classes start February 2027). Several intakes a year",
    "closes": null,
    "rolling": true,
-   "checkDates": true,
+   "checkDates": false,
    "id": "boston-city-campus-business-college",
-   "checkedOn": "2026-11-13"
+   "checkedOn": "2026-11-16"
   },
   {
    "type": "private",
@@ -1161,12 +1161,12 @@
    "province": "Eastern Cape",
    "applyUrl": "https://bccollege.co.za/",
    "prospectusUrl": "https://bccollege.co.za/programmes/",
-   "datesText": "30 Aug - 30 Nov 2026 (not yet confirmed by the college)",
-   "closes": "2026-11-30",
+   "datesText": "Reported 2027 dates differ (some sources say 1 to 30 September 2026, others 30 August to 30 November 2026). Contact the college to confirm before you apply",
+   "closes": null,
    "rolling": false,
    "checkDates": true,
    "id": "buffalo-city-tvet-eastern-cape",
-   "checkedOn": "2026-11-13"
+   "checkedOn": "2026-11-16"
   },
   {
    "type": "tvet",
@@ -1199,15 +1199,15 @@
    "type": "tvet",
    "name": "Northlink TVET - Western Cape",
    "province": "Western Cape",
-   "applyUrl": "https://www.northlink.co.za/",
+   "applyUrl": "https://www.northlink.co.za/apply",
    "prospectusUrl": "https://www.northlink.co.za/wp-content/uploads/2026/04/PDF-Jan-2026-PROGRAMME-OFFERINGS.pdf",
    "prospectusMaybeOld": true,
-   "datesText": "Opened 14 Sep 2026, closes 30 Oct 2026 (closing date not yet confirmed by the college)",
+   "datesText": "Opened 14 Sep 2026, closed 30 Oct 2026 (2027 intake). Ask the college about late or second-semester applications",
    "closes": "2026-10-30",
    "rolling": false,
-   "checkDates": true,
+   "checkDates": false,
    "id": "northlink-tvet-western-cape",
-   "checkedOn": "2026-11-13"
+   "checkedOn": "2026-11-16"
   },
   {
    "type": "tvet",
@@ -1409,6 +1409,82 @@
    "checkDates": false,
    "id": "learn-services-seta-and-sisekelo-seta-learnerships-12-months",
    "checkedOn": "2026-11-13"
+  },
+  {
+   "type": "learnership",
+   "name": "Universal Healthcare Learnership 2027",
+   "kind": "Learnership (12 months, R7,000 a month plus medical insurance)",
+   "location": "Universal House, Sunninghill, Sandton, Gauteng",
+   "province": "Gauteng",
+   "requirements": "Completed Grade 12. SA citizen aged 18 to 35. Unemployed and not studying. Must live in Gauteng and be able to travel to Sunninghill. Must not have completed a Business Administration NQF Level 4 learnership before.",
+   "applyUrl": "https://www.pnet.co.za/jobs--LEARNERSHIP-2027-AT-UNIVERSAL-HEALTHCARE-Sunninghill-Universal-Health--4285058-inline.html",
+   "howToApply": "Apply through the Universal Healthcare advert on PNet. Have your CV, certified ID and certified matric certificate ready.",
+   "thirdPartyLink": true,
+   "datesText": "Closes 1 December 2026",
+   "closes": "2026-12-01",
+   "rolling": false,
+   "checkDates": false,
+   "id": "learn-universal-healthcare-learnership-2027",
+   "checkedOn": "2026-11-16"
+  },
+  {
+   "type": "learnership",
+   "name": "DHL YES4Youth Learnership (50 posts)",
+   "kind": "YES4Youth learnership (logistics)",
+   "location": "Uitenhage (Kariega), Eastern Cape",
+   "province": "Eastern Cape",
+   "requirements": "Matric with English and Mathematics or Mathematical Literacy. SA citizen aged 18 to 29. Currently unemployed. A forklift, reach truck or driver's licence is an advantage.",
+   "applyUrl": "https://careers.dhl.com/global/en/job/DPDHGLOBALAV389271ENGLOBALEXTERNAL/YES4Youth-Learnership-X50",
+   "datesText": "Advertised 3 November 2026. Closing date not stated, so apply soon",
+   "closes": null,
+   "checkDates": true,
+   "rolling": false,
+   "id": "learn-dhl-yes4youth-learnership-50-posts",
+   "checkedOn": "2026-11-16"
+  },
+  {
+   "type": "learnership",
+   "name": "Rand Mutual Assurance (RMA) Learnership 2027",
+   "kind": "Learnership (12 months, starts January 2027)",
+   "location": "Parktown, Johannesburg, Gauteng",
+   "province": "Gauteng",
+   "requirements": "Completed Grade 12 (National Senior Certificate). SA citizen. Currently unemployed. No degree or experience needed. Reference RM-946.",
+   "applyUrl": "https://rma.mcidirecthire.com/External/Job?Ref=TEkBhDYErs0qhHgueWeCgt_yRI-cnPLR1MRk1RR6Cpou3ktpvROhSqni_BGkK6j0fv60k7Zr9rri6vfVPHMvr-4q2ZP9nuVuEaGQaEQof0YPBnXqudKYzx8NtoqUit-Q7ErTaq-nt-JDxov8Lq_jQg",
+   "datesText": "Closing date not stated, so apply soon. Programme starts January 2027",
+   "closes": null,
+   "checkDates": true,
+   "rolling": false,
+   "id": "learn-rand-mutual-assurance-rma-learnership-2027",
+   "checkedOn": "2026-11-16"
+  },
+  {
+   "type": "learnership",
+   "name": "Msobo Coal Non-Artisan Learnership: Surface Rock Breaking",
+   "kind": "Learnership (mining)",
+   "location": "About 20 km north of Ermelo, Mpumalanga",
+   "province": "Mpumalanga",
+   "requirements": "Grade 12 (Matric) or equivalent. SA citizen aged 18 to 35. Proof of residence. Updated CV and certified copies of ID and qualifications.",
+   "applyUrl": "mailto:Recruitment@msobo.co.za?subject=Application%3A%20Surface%20Rock%20Breaking%20Learnership%202026",
+   "howToApply": "Apply by email to Recruitment@msobo.co.za with the subject line “Application: Surface Rock Breaking Learnership 2026 – Your Name”.",
+   "datesText": "Closes 30 November 2026",
+   "closes": "2026-11-30",
+   "checkDates": true,
+   "rolling": false,
+   "id": "learn-msobo-coal-non-artisan-learnership-surface-rock-breaking",
+   "checkedOn": "2026-11-16"
+  },
+  {
+   "type": "funding",
+   "name": "Moshal Scholarship Program 2027",
+   "province": "National",
+   "requirements": "In Matric or completed Matric. Studying, or planning to study, a degree in 2027 in Engineering, Medicine (MBChB), Pharmacy (UKZN only), Veterinary Science, or another STEM or Commerce degree at UCT, SU, UWC, Wits, UP, UKZN, UFS or UJ. For students from low-income households. Covers full tuition, living and meal allowances and a laptop allowance.",
+   "applyUrl": "https://moshal-sa.formtitan.com/ftproject/ftaafc8724957246d9a1811a1d925f4480",
+   "datesText": "Closes 31 December 2026",
+   "closes": "2026-12-31",
+   "rolling": false,
+   "checkDates": false,
+   "id": "moshal-scholarship-program-2027",
+   "checkedOn": "2026-11-16"
   }
  ]
 }
