@@ -53,13 +53,21 @@
 
     <h2>How we keep information accurate</h2>
     <p>Each option shows the date it was last verified and links to the official source. Information that has not been checked recently is marked so you know to confirm it. We review content regularly and before the main application seasons.</p>
-    <p>Found something out of date? Email <a data-email="Outdated information on YAZI" href="#contact">us</a> and we will check it.</p>
+    <p>Found something out of date? <a href="#contact">Contact us</a> and we will check it.</p>
 
     <h2 id="contact">Contact us</h2>
     <div class="contact-box">
       <p>We would love to hear from you. Get in touch if you have a question, want to report outdated information, or would like to work with YAZI.</p>
       <dl class="contact-list">
-        <dt>Email</dt><dd><a data-email="Enquiry from the YAZI website" href="#contact">Email us</a></dd>
+        <dt>Email</dt><dd>
+          <p class="email-addr" data-email-text></p>
+          <div class="email-actions">
+            <a class="btn" data-mailto="Enquiry from the YAZI website" href="#contact">Email us</a>
+            <a class="btn alt" data-gmail="Enquiry from the YAZI website" href="#contact" target="_blank" rel="noopener">Open in Gmail</a>
+            <button class="btn alt" type="button" data-copy-email>Copy email</button>
+          </div>
+          <p class="muted small-note" id="copy-status" aria-live="polite">If “Email us” does not open an email app on your computer, use Gmail or copy the address.</p>
+        </dd>
         <dt>Report outdated information</dt><dd>Tell us the name of the institution or opportunity and what has changed. We check every report.</dd>
       </dl>
       <p class="muted">YAZI does not process applications. For questions about your application, contact the institution or funder directly.</p>
@@ -70,7 +78,7 @@
 
     <h2 id="privacy">Privacy</h2>
     <p>YAZI does not ask you to create an account and does not collect personal information such as your name, ID number or contact details. The answers you give in the options finder are used in your browser to show your results and are not sent to us.</p>
-    <p>Our hosting provider may keep standard technical logs, such as IP addresses, to run and secure the site. If we add analytics or any feature that collects personal information, we will update this page first and handle that information in line with the Protection of Personal Information Act (POPIA). YAZI is responsible for this website. Questions about privacy can be sent to <a data-email="Privacy question" href="#contact">our email</a>.</p>
+    <p>Our hosting provider may keep standard technical logs, such as IP addresses, to run and secure the site. If we add analytics or any feature that collects personal information, we will update this page first and handle that information in line with the Protection of Personal Information Act (POPIA). YAZI is responsible for this website. Questions about privacy can be sent to us using the details under <a href="#contact">Contact us</a>.</p>
     <p>If you choose light or dark mode, that choice is saved in your browser on your device so the site remembers it. It contains no personal information.</p>
     <p>If you use the WhatsApp share button, the message is created on your device and sent through WhatsApp under its own terms.</p>
   </div>
@@ -99,7 +107,7 @@
     </nav>
     <div class="foot-links">
       <h2>Contact</h2>
-      <a data-email="Enquiry from the YAZI website" href="about.html#contact">Email us</a>
+      <span class="foot-email" data-email-text></span>
       <a href="about.html#contact">Contact us</a>
     </div>
   </div>

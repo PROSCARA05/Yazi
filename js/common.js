@@ -79,11 +79,19 @@ function staleNote(compiled,days){
   document.addEventListener("keydown",e=>{if(e.key==="Escape")set(false)});
 })();
 
-/* Fill in the contact email wherever the page asks for it */
-document.querySelectorAll("[data-email]").forEach(a=>{
-  a.textContent=CONTACT_EMAIL;
-  a.href="mailto:"+CONTACT_EMAIL+(a.dataset.email?"?subject="+encodeURIComponent(a.dataset.email):"");
-});
+/* Contact email: shown as text, plus three ways to use it (email app, Gmail in the browser, copy) */
+document.querySelectorAll("[data-email-text]").forEach(el=>el.textContent=CONTACT_EMAIL);
+document.querySelectorAll("[data-mailto]").forEach(a=>a.href="mailto:"+CONTACT_EMAIL+"?subject="+encodeURIComponent(a.dataset.mailto));
+document.querySelectorAll("[data-gmail]").forEach(a=>a.href="https://mail.google.com/mail/?view=cm&fs=1&to="+encodeURIComponent(CONTACT_EMAIL)+"&su="+encodeURIComponent(a.dataset.gmail));
+document.querySelectorAll("[data-copy-email]").forEach(btn=>btn.addEventListener("click",async()=>{
+  let ok=false;
+  try{if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(CONTACT_EMAIL);ok=true}}catch(e){}
+  if(!ok){try{const t=document.createElement("textarea");t.value=CONTACT_EMAIL;t.setAttribute("readonly","");t.style.position="fixed";t.style.opacity="0";document.body.appendChild(t);t.select();ok=document.execCommand("copy");t.remove()}catch(e){}}
+  const status=document.getElementById("copy-status");
+  btn.textContent=ok?"Copied":"Copy email";
+  if(status)status.textContent=ok?"Email address copied: "+CONTACT_EMAIL+". Paste it into your email.":"Could not copy automatically. Please select the address above and copy it.";
+  if(ok)setTimeout(()=>{btn.textContent="Copy email"},2500);
+}));
 
 /* Light / dark switch. Follows the device until the visitor chooses; the choice is remembered on this device. */
 (function(){

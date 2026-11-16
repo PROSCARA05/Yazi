@@ -173,3 +173,9 @@ nav a[aria-current="page"]{color:var(--brand);text-decoration:underline;text-und
   .js #main-nav{order:3}
 }
 @media (min-width:761px){#main-nav{margin-left:auto}}
+
+/* Contact email */
+.email-addr{font-size:20px;font-weight:700;margin:0 0 10px;word-break:break-all;user-select:all}
+.email-actions{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:8px}
+.small-note{font-size:14px;margin:0}
+.foot-email{padding:5px 0;font-size:15px;word-break:break-all;user-select:all}
