@@ -123,6 +123,11 @@ async function init(){
     $("go").classList.add("hide");return;
   }
   $("notice").innerHTML="<strong>Information last updated "+niceDate(DATA.compiled)+".</strong> Dates and requirements change, so always confirm with the institution before you apply.";
+  /* Live counts on the home page overview card */
+  document.querySelectorAll("[data-count]").forEach(el=>{
+    const n=DATA.institutions.filter(i=>i.type===el.dataset.count).length;
+    if(n)el.textContent=n+" "+(n===1?el.dataset.one:el.dataset.many);
+  });
   $("intro").textContent="Answer "+QS.length+" quick questions. We’ll show you the options that fit you and what to do next.";
   $("go").onclick=()=>{step=0;ans={};busy=false;view("quiz",()=>render(1));bringIntoView(document.querySelector("#finder .panel"),90)};
   $("back").onclick=()=>{if(step>0&&!busy){step--;ask(-1)}};
