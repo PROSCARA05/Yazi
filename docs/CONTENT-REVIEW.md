@@ -43,4 +43,4 @@ Loaded from Learnerships-Internships.docx (11 entries) into a new "Learnerships"
 - Buffalo City TVET and Northlink TVET: year corrected to 2026. Northlink opened 14 Sep 2026. Neither closing date is confirmed by the college yet, so both still show a "check dates" note.
 
 ## Before launch
-- The contact email is a sample (hello@yazi.example). Change CONTACT_EMAIL at the top of js/common.js.
+- Contact email set to yaziinsight@gmail.com (CONTACT_EMAIL at the top of js/common.js).

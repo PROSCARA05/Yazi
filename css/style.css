@@ -1,5 +1,8 @@
 :root{--bg:#f6f8f7;--surface:#fff;--tint:#e8f1ee;--ink:#14201d;--muted:#4f5f5a;--line:#cbd8d3;--brand:#0b6b5c;--brand-ink:#fff;--accent:#f2b134;--warn-bg:#fff4d6;--warn-ink:#4a3600;--radius:12px}
-@media (prefers-color-scheme:dark){:root{--bg:#0e1715;--surface:#16231f;--tint:#12201c;--ink:#e8f1ee;--muted:#9fb2ac;--line:#2a3b35;--brand:#4fc4af;--brand-ink:#06201b;--warn-bg:#3a2f0e;--warn-ink:#f6e3ad}}
+:root{color-scheme:light}
+/* Dark mode: follows the device unless the visitor picks a mode with the header switch */
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#0e1715;--surface:#16231f;--tint:#12201c;--ink:#e8f1ee;--muted:#9fb2ac;--line:#2a3b35;--brand:#4fc4af;--brand-ink:#06201b;--warn-bg:#3a2f0e;--warn-ink:#f6e3ad;color-scheme:dark}}
+:root[data-theme=dark]{--bg:#0e1715;--surface:#16231f;--tint:#12201c;--ink:#e8f1ee;--muted:#9fb2ac;--line:#2a3b35;--brand:#4fc4af;--brand-ink:#06201b;--warn-bg:#3a2f0e;--warn-ink:#f6e3ad;color-scheme:dark}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:72px}
 body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 "Trebuchet MS","Segoe UI",system-ui,sans-serif}
@@ -149,3 +152,24 @@ nav a[aria-current="page"]{color:var(--brand);text-decoration:underline;text-und
 .prog b{transition:width .35s cubic-bezier(.2,.7,.2,1)}
 @media (max-width:760px){.js #main-nav.open{animation:menuIn .2s ease-out both}}
 @media (prefers-reduced-motion:reduce){.fade-in,.slide-in,.js #main-nav.open{animation:none!important}.cat:hover{transform:none}}
+
+
+.foot-legal{display:flex;justify-content:space-between;flex-wrap:wrap;gap:4px 24px}
+.foot-legal strong{color:var(--ink)}
+.foot-legal .credit{color:var(--ink);font-weight:700}
+.foot-legal .credit:hover{color:var(--brand)}
+
+/* Light / dark switch */
+.theme-btn{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;flex:none;border-radius:10px;border:2px solid var(--line);background:transparent;color:var(--ink);cursor:pointer;transition:border-color .18s ease,color .18s ease,background-color .18s ease,transform .12s ease}
+.theme-btn:hover{border-color:var(--brand);color:var(--brand)}
+.theme-btn:active{transform:scale(.94)}
+.theme-btn .i-sun{display:none}
+.theme-btn[data-mode=dark] .i-sun{display:block}
+.theme-btn[data-mode=dark] .i-moon{display:none}
+.theme-anim,.theme-anim *{transition:background-color .3s ease,color .3s ease,border-color .3s ease!important}
+@media (max-width:760px){
+  .js .theme-btn{order:1;margin-left:auto}
+  .js .menu-btn{order:2;margin-left:0}
+  .js #main-nav{order:3}
+}
+@media (min-width:761px){#main-nav{margin-left:auto}}

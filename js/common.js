@@ -1,13 +1,26 @@
 /* Shared helpers. Content is read in one place: loadContent(). Swap it for Supabase later. */
 "use strict";
-/* SAMPLE contact email. Replace with the real address before launch. Every page reads it from here. */
-const CONTACT_EMAIL="yaziinsight@gmail.com";    
+/* Contact email. Every page reads it from here. */
+const CONTACT_EMAIL="yaziinsight@gmail.com";
 const PROVINCES=["Eastern Cape","Free State","Gauteng","KwaZulu-Natal","Limpopo","Mpumalanga","Northern Cape","North West","Western Cape"];
+/* Online, the site reads data/content.json directly, so an edit on GitHub goes live without rebuilding anything.
+   data/content.js is only a fallback: for opening the site from a folder, or if content.json has a mistake in it. */
 async function loadContent(){
-  if(window.YAZI_CONTENT)return window.YAZI_CONTENT;
-  const res=await fetch("data/content.json",{cache:"no-cache"});
-  if(!res.ok)throw new Error("Content could not be loaded");
-  return res.json();
+  let data=null;
+  if(/^https?:$/.test(location.protocol)){
+    try{const res=await fetch("data/content.json",{cache:"no-cache"});if(res.ok)data=await res.json()}
+    catch(e){console.warn("data/content.json could not be read, using data/content.js instead",e)}
+  }
+  if(!data&&window.YAZI_CONTENT)data=window.YAZI_CONTENT;
+  if(!data)throw new Error("Content could not be loaded");
+  return tidyContent(data);
+}
+/* Hides learnerships a set number of days after they close, so expired adverts drop off by themselves. */
+function tidyContent(data){
+  const days=(data.settings&&Number.isFinite(data.settings.hideClosedLearnershipsAfterDays))?data.settings.hideClosedLearnershipsAfterDays:14;
+  const now=Date.now();
+  data.institutions=(data.institutions||[]).filter(i=>!(i.type==="learnership"&&i.closes&&now-new Date(i.closes+"T23:59:59")>days*864e5));
+  return data;
 }
 const $=id=>document.getElementById(id);
 /* Motion helpers. Everything respects the "reduce motion" setting on the visitor's device. */
@@ -71,3 +84,20 @@ document.querySelectorAll("[data-email]").forEach(a=>{
   a.textContent=CONTACT_EMAIL;
   a.href="mailto:"+CONTACT_EMAIL+(a.dataset.email?"?subject="+encodeURIComponent(a.dataset.email):"");
 });
+
+/* Light / dark switch. Follows the device until the visitor chooses; the choice is remembered on this device. */
+(function(){
+  const root=document.documentElement,btn=document.querySelector(".theme-btn");if(!btn)return;
+  const sys=window.matchMedia?matchMedia("(prefers-color-scheme: dark)"):null;
+  const current=()=>root.getAttribute("data-theme")||(sys&&sys.matches?"dark":"light");
+  const label=()=>{const next=current()==="dark"?"light":"dark";const t="Switch to "+next+" mode";btn.setAttribute("aria-label",t);btn.title=t;btn.dataset.mode=current()};
+  btn.addEventListener("click",()=>{
+    const next=current()==="dark"?"light":"dark";
+    if(!REDUCE){root.classList.add("theme-anim");setTimeout(()=>root.classList.remove("theme-anim"),350)}
+    root.setAttribute("data-theme",next);
+    try{localStorage.setItem("yazi-theme",next)}catch(e){}
+    label();
+  });
+  if(sys&&sys.addEventListener)sys.addEventListener("change",label);
+  label();
+})();

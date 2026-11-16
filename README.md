@@ -1,5 +1,7 @@
 # YAZI website
 
+Designed and developed by SyntaxConnect.
+
 A fast, static website that helps Grade 12 learners and matriculants find realistic options after matric.
 Plain HTML, CSS and JavaScript. No build step, no server code.
 
@@ -8,13 +10,15 @@ Plain HTML, CSS and JavaScript. No build step, no server code.
     index.html               Home page, options finder and browse-by-category links
     explore.html             Browse all: universities, TVET colleges, private, funding, learnerships
     about.html               About, founder, contact, disclaimer and privacy
+    syntaxconnect.html       SyntaxConnect "coming soon" page (linked from the footer credit)
     css/style.css            All styling (light and dark mode)
     js/common.js             Shared helpers, mobile menu and the contact email (CONTACT_EMAIL)
     js/app.js                Options finder
     js/explore.js            Browse page (tabs, name search, province and status filters)
     data/content.json        All content: finder options and every listed option. Edit this one
-    data/content.js          Generated from content.json. Do not edit by hand
+    data/content.js          Backup copy of content.json for offline use. Rebuild with tools/build-content.js
     tools/build-content.js   Rebuilds data/content.js after you edit data/content.json
+    docs/UPDATING.md         How to keep the listings up to date (start here)
     docs/CONTENT-REVIEW.md   Data that still needs checking
 
 ## Run it locally
@@ -54,7 +58,6 @@ Build command: none. Publish directory: the project root.
 ## Before launch
 
 - Work through docs/CONTENT-REVIEW.md
-- Replace the sample contact email (CONTACT_EMAIL at the top of js/common.js)
 - Check that the YAZI name and a domain are available
 - Test on a low-end Android phone and a slow connection
 

@@ -103,7 +103,7 @@ function finish(){
      +"<h4>What you need</h4><ul>"+o.need.map(x=>"<li>"+esc(x)+"</li>").join("")+"</ul>"
      +"<h4>Your next steps</h4><ol>"+o.steps.map(x=>"<li>"+esc(x)+"</li>").join("")+"</ol>"
      +(sum?"<h4>Dates</h4>"+sum:"")
-     +'<div class="meta">'+(o.deadline?"Deadline: "+esc(o.deadline)+"<br>":"")+"Information compiled: "+niceDate(DATA.compiled)+"<br>"+staleNote(DATA.compiled,DATA.staleDays)
+     +'<div class="meta">'+(o.deadline?"Deadline: "+esc(o.deadline)+"<br>":"")+"Information last updated: "+niceDate(DATA.compiled)+"<br>"+staleNote(DATA.compiled,DATA.staleDays)
      +(o.link?'<br>Official source: <a href="'+esc(o.link.url)+'" target="_blank" rel="noopener">'+esc(o.link.label)+"</a>":"")+"</div></article>";
   });
   $("cards").innerHTML=h;
@@ -122,7 +122,7 @@ async function init(){
     $("intro").textContent="Sorry, the options could not be loaded. Please check your connection and refresh the page.";
     $("go").classList.add("hide");return;
   }
-  $("notice").innerHTML="<strong>Information compiled "+niceDate(DATA.compiled)+".</strong> Dates and requirements change, so always confirm with the institution before you apply.";
+  $("notice").innerHTML="<strong>Information last updated "+niceDate(DATA.compiled)+".</strong> Dates and requirements change, so always confirm with the institution before you apply.";
   $("intro").textContent="Answer "+QS.length+" quick questions. We’ll show you the options that fit you and what to do next.";
   $("go").onclick=()=>{step=0;ans={};busy=false;view("quiz",()=>render(1));bringIntoView(document.querySelector("#finder .panel"),90)};
   $("back").onclick=()=>{if(step>0&&!busy){step--;ask(-1)}};

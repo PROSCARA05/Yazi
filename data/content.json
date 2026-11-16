@@ -1,6 +1,9 @@
 {
- "compiled": "2026-10-29",
+ "compiled": "2026-11-15",
  "staleDays": 120,
+ "settings": {
+  "hideClosedLearnershipsAfterDays": 14
+ },
  "options": [
   {
    "id": "uni",

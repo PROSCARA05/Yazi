@@ -23,7 +23,7 @@ function card(i){
    +(i.howToApply?'<p><strong>How to apply:</strong> '+esc(i.howToApply)+'</p>':"")
    +(links.length?'<div class="row">'+links.join("")+'</div>':"")
    +(notes.length?'<p class="muted note">'+notes.map(esc).join(" ")+'</p>':"")
-   +'<div class="meta">Information compiled: '+niceDate(i.checkedOn)+'<br>'+staleNote(i.checkedOn,DATA.staleDays)+'</div></article>';
+   +'<div class="meta">Last checked: '+niceDate(i.checkedOn)+'<br>'+staleNote(i.checkedOn,DATA.staleDays)+'</div></article>';
 }
 
 function render(){
@@ -36,7 +36,10 @@ function render(){
   }).sort((a,b)=>{const r={soon:0,open:1,check:2,closed:3};return r[statusOf(a).key]-r[statusOf(b).key]||a.name.localeCompare(b.name)});
   $("blurb").textContent=TABS[tab].blurb;
   $("shown").textContent="Showing "+list.length+" of "+all.length;
-  $("list").innerHTML=list.length?list.map(card).join(""):'<p>Nothing matches. Try clearing a filter.</p>';
+  $("list").innerHTML=list.length?list.map(card).join("")
+    :!all.length&&tab==="learnerships"?'<p>There are no open learnerships listed right now. New ones are added regularly, so check back soon. You can also search for learnerships on <a href="https://sayouth.mobi" target="_blank" rel="noopener">SA Youth</a>.</p>'
+    :!all.length?'<p>Nothing is listed here right now. Please check back soon.</p>'
+    :'<p>Nothing matches. Try clearing a filter.</p>';
   document.querySelectorAll(".tabs button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.tab===tab));
 }
 
@@ -52,7 +55,7 @@ async function init(){
   $("tabs").onclick=e=>{if(e.target.dataset.tab)setTab(e.target.dataset.tab)};
   ["search","prov","stat"].forEach(id=>$(id).addEventListener("input",render));
   $("clear").onclick=clearAll;
-  $("asof").textContent="Status as of "+new Date().toLocaleDateString("en-ZA",{day:"numeric",month:"long",year:"numeric"})+". Information compiled "+niceDate(DATA.compiled)+".";
+  $("asof").textContent="Status as of "+new Date().toLocaleDateString("en-ZA",{day:"numeric",month:"long",year:"numeric"})+". Information last updated "+niceDate(DATA.compiled)+".";
   tab=location.hash.slice(1);setTab(tab);
 }
 window.addEventListener("hashchange",()=>{const t=location.hash.slice(1);if(DATA&&TABS[t]&&t!==tab){tab=t;render();replay($("list"),"fade-in")}});
