@@ -1,5 +1,7 @@
 # YAZI website
 
+Live site: https://yaziinsight.netlify.app (hosted on Netlify, deployed automatically from the main branch).
+
 Designed and developed by SyntaxConnect.
 
 A fast, static website that helps Grade 12 learners and matriculants find realistic options after matric.
